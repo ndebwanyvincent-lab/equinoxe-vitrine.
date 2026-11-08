@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Équinoxe Services</title>
+<meta name="description" content="ÉQUINOXE EVENTS · Invitations digitales, invitations en dur, chevalets de table et couverture photo. L'art de créer des souvenirs.">
+<meta name="theme-color" content="#111014">
+<meta property="og:title" content="Équinoxe Services">
+<meta property="og:description" content="Découvrez nos modèles d'invitations et nos services. L'art de créer des souvenirs.">
+<meta property="og:image" content="/media/soiree-elegante.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<header><div class="wrap">
+  <div class="hd">
+    <a class="logo" href="/">équinoxe<span>.</span></a>
+    <button class="grace" id="graceBtn" aria-label="Parler avec Grâce, notre assistante"><span class="orb pulse"></span><span class="gtxt"><b>Parler avec Grâce</b><small>Assistante</small></span></button>
+    <button class="burger" aria-label="Menu" id="burger"><svg width="24" height="18" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 2h26M8 11h20M2 20h26"/></svg></button>
+  </div>
+  <div class="tabs" role="tablist" id="tabs"></div>
+</div></header>
+
+<main><div class="wrap">
+  <section class="card" id="card"><div class="loading">Chargement des modèles…</div></section>
+  <div class="contact"><span id="sloganLine">ÉQUINOXE EVENTS · L'art de créer des souvenirs.</span><b id="num">+243 836 963 894</b><button class="copy" id="copyBtn">Copier le numéro</button></div>
+</div></main>
+
+<!-- Menu -->
+<div class="screen" id="menu" hidden><div class="wrap">
+  <div class="hd"><span class="logo">équinoxe<span>.</span></span><button class="burger" aria-label="Fermer le menu" id="menuClose"><svg width="20" height="20" viewBox="0 0 20 20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
+  <nav class="menulist" id="menulist"></nav>
+  <div class="btns" style="margin-top:14px">
+    <button class="btn out" id="menuGrace">Parler avec Grâce, notre assistante</button>
+    <a class="btn full" id="menuWa" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+  </div>
+</div></div>
+
+<!-- Aperçu en grille -->
+<div class="screen" id="gridView" hidden><div class="wrap">
+  <div class="hd"><b id="gTitle" style="font-weight:500"></b><button class="burger" aria-label="Fermer l'aperçu" id="gridClose"><svg width="20" height="20" viewBox="0 0 20 20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l12 12M16 4L4 16"/></svg></button></div>
+  <div class="grid" id="grid"></div>
+</div></div>
+
+<!-- Appel de Grâce -->
+<div class="call" id="call" hidden role="dialog" aria-label="Appel de Grâce">
+  <div class="call-top"><small id="callKicker">Appel entrant</small><h2>Grâce</h2><p id="callStatus">Équinoxe Events vous appelle…</p><span class="timer" id="timer" hidden>00:00</span></div>
+  <div class="bigorb" id="bigorb"><i class="ring"></i><i class="ring r2"></i><span class="core"></span></div>
+  <div class="call-actions" id="ringActions">
+    <button class="answer" id="answerBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Répondre</button>
+    <button class="later" id="laterBtn">Plus tard</button>
+  </div>
+  <div class="call-actions" id="errActions" hidden>
+    <p class="err" id="errText"></p>
+    <button class="answer" id="retryBtn">Réessayer</button>
+    <a class="btn ghost" id="errWa" target="_blank" rel="noopener" style="width:100%">Écrire sur WhatsApp</a>
+    <button class="later" id="errClose">Fermer</button>
+  </div>
+  <div class="incall-btns" id="inCallActions" hidden>
+    <button class="cbtn" id="muteBtn"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></i><span id="muteLbl">Couper le micro</span></button>
+    <button class="cbtn" id="minBtn"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></i><span>Voir les modèles</span></button>
+    <button class="cbtn hang" id="hangBtn"><i><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-1.6 0-3.2.3-4.6.7v3.1c0 .4-.2.7-.6.9-1 .5-1.9 1.1-2.7 1.8-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3L.3 13.1A1 1 0 0 1 0 12.4c0-.3.1-.5.3-.7C3.4 8.8 7.5 7 12 7s8.6 1.8 11.7 4.7c.2.2.3.4.3.7 0 .3-.1.5-.3.7l-2.5 2.4c-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.3-.8-.7-1.7-1.3-2.7-1.8-.3-.2-.6-.5-.6-.9V9.7C15.2 9.3 13.6 9 12 9z"/></svg></i><span>Raccrocher</span></button>
+  </div>
+</div>
+<button class="bubble" id="bubble" hidden aria-label="Revenir à l'appel avec Grâce"><span class="orb pulse"></span><span>Grâce · en ligne</span></button>
+
+<script type="module" src="/assets/vitrine.js"></script>
+</body>
+</html>
